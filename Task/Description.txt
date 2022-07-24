@@ -1,0 +1,28 @@
+
+It is required to write a C++ console program to generate the signature of the specified file.
+The signature is generated as follows: the source file is divided into blocks of equal (fixed) length
+(if the file size is not a multiple of the block size, the last fragment must be padded with zeros
+to the full block size). For each block, the hash value of the function is calculated and added
+to the output signature file in hex string format. The hash for each block is written on a new line.
+
+Interface:
+A command line that contains:
+* Path to the input file.
+* Path to the output file.
+* Block size: from 512 B to 10 MB (default is 1 MB).
+
+Requirements:
+* The program must process files from 0 B to 128 GB in size.
+* The program should consume no more than 1 GB of memory.
+* The program must work under Windows and Linux.
+* The program must use MD5 as a hash function.
+* The storage type can be different: HDD, SSD, RAM Disk, network storage.
+* The program should not have races and resource leaks.
+* It is necessary to implement correct error handling - diagnostic information should be displayed.
+* It is necessary to optimize the speed of the program as much as possible.
+* It is not allowed to use third-party libraries like OpenMP, OpenCL, etc.
+* It is not allowed to use memory-mapped files.
+* The code should be readable, simple, neat. The program algorithm should be understandable without debugging.
+
+Assumptions:
+It is allowed to use the "boost" library.
